@@ -19,6 +19,26 @@ Tujuan utama proyek ini adalah:
 
 ---
 
+## Dataset
+
+Dataset yang digunakan dalam proyek ini adalah **Indonesian Batik Motifs** dari Kaggle:
+
+📊 **Sumber Dataset**: [Indonesian Batik Motifs (Corak App)](https://www.kaggle.com/datasets/alfanme/indonesian-batik-motifs-corak-app)
+
+Dataset ini berisi koleksi citra motif batik Indonesia dengan berbagai kategori. Dalam proyek ini, kami menggunakan 5 kelas utama:
+- **Batik Poleng**
+- **Batik Kawung**
+- **Batik Parang**
+- **Batik Megamendung**
+- **Batik Dayak**
+
+Untuk menggunakan dataset:
+1. Download dataset dari link Kaggle di atas
+2. Extract dan susun sesuai struktur folder yang dijelaskan di bagian **Dataset dan Preprocessing**
+3. Pastikan folder `TRAIN` dan `TEST` sudah sesuai dengan struktur yang dibutuhkan
+
+---
+
 ## Dataset dan Preprocessing
 
 ### Struktur Dataset
