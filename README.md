@@ -281,45 +281,75 @@ Struktur direktori minimal untuk menjalankan dashboard:
 
 ## Panduan Menjalankan Sistem Secara Lokal
 
-### 1. Membuat Virtual Environment
+### Prasyarat
 
-```
-python -m venv venv
-```
+Pastikan sudah terinstal:
+- **Python 3.10+** (direkomendasikan versi 3.10)
+- **PDM** (Python Dependency Manager)
+- **Visual Studio Code** atau IDE lainnya
 
-Aktivasi environment:
+### 1. Setup PDM dan Inisialisasi Proyek
+
+#### Instalasi PDM
+
+Jika belum memiliki PDM, install terlebih dahulu:
 
 **Windows:**
 ```
-venv\Scripts\activate
+(Invoke-WebRequest -Uri https://pdm-project.org/install-pdm.py -UseBasicParsing).Content | python -
 ```
 
-**Linux / macOS:**
+**Linux/macOS:**
 ```
-source venv/bin/activate
+curl -sSL https://pdm-project.org/install-pdm.py | python3 -
 ```
+
+Atau menggunakan pip:
+```
+pip install --user pdm
+```
+
+#### Inisialisasi Proyek
+
+Buat direktori proyek dan inisialisasi PDM:
+
+```
+mkdir batik-classification-dashboard
+cd batik-classification-dashboard
+pdm init
+```
+
+Ikuti prompt interaktif PDM (pilih Python interpreter yang sesuai).
 
 ### 2. Instalasi Dependensi
 
-Jika tersedia `requirements.txt`:
+Tambahkan dependensi yang diperlukan menggunakan PDM:
 
 ```
-pip install -r requirements.txt
+pdm add streamlit tensorflow numpy pandas plotly pillow scikit-learn seaborn
 ```
 
-Jika belum ada, instal manual:
-
-```
-pip install streamlit tensorflow numpy pandas plotly pillow scikit-learn seaborn
-```
+PDM akan secara otomatis membuat file `pyproject.toml` dan `pdm.lock` yang berisi informasi dependensi proyek.
 
 ### 3. Menjalankan Dashboard
 
+Setelah semua dependensi terinstall, jalankan aplikasi Streamlit menggunakan PDM:
+
 ```
-streamlit run app.py
+pdm run streamlit run app.py
 ```
 
-Buka `http://localhost:8501` di browser.
+Output yang akan muncul:
+
+```
+You can now view your Streamlit app in your browser.
+
+Local URL: http://localhost:8501
+Network URL: http://192.168.x.x:8501
+```
+
+Buka URL yang muncul di browser (biasanya otomatis terbuka).
+
 
 ### 4. Fitur Dashboard
 
